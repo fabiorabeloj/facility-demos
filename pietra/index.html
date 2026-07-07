@@ -7,9 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  /* Identidade visual extraída do site real (0btiaz6sulx8h.css + logo oficial):
-     roxo #691f84 (mestre) · #632e77/#561b6b (sombras) · amarelo #ffa80b · amarelo-logo #ffef0b
-     creme #fefce8/#fffedb · fundo #f9f9f9 · fonte ABeeZee */
+  /* Identidade oficial do Colégio Pietra: roxo #691f84 · amarelo #ffa80b · ABeeZee (extraída do site real) */
   :root{
     --roxo:#691f84; --roxo-2:#632e77; --roxo-3:#561b6b;
     --amarelo:#ffa80b; --amarelo-logo:#ffef0b; --creme:#fefce8;
@@ -19,20 +17,20 @@
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'ABeeZee',system-ui,sans-serif;color:var(--texto);background:var(--fundo);line-height:1.6}
   .demo-badge{position:fixed;top:12px;right:12px;background:var(--roxo);color:var(--amarelo-logo);font-size:11px;letter-spacing:.08em;padding:6px 12px;border-radius:999px;z-index:99;opacity:.93}
-  header{background:var(--branco);padding:14px 6vw;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 8px rgba(105,31,132,.10)}
+  header{background:var(--branco);padding:14px 6vw;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 8px rgba(105,31,132,.10);position:sticky;top:0;z-index:50}
   .logo img{height:44px;display:block}
-  nav a{color:var(--roxo);text-decoration:none;margin-left:22px;font-size:.95rem}
+  nav a{color:var(--roxo);text-decoration:none;margin-left:20px;font-size:.93rem}
   nav a:hover{color:var(--roxo-3);text-decoration:underline}
-  .hero{background:linear-gradient(160deg,var(--roxo-3) 0%,var(--roxo) 55%,var(--roxo-2) 100%);color:var(--branco);padding:64px 6vw 72px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
-  .hero h1{font-size:clamp(1.7rem,3.6vw,2.55rem);line-height:1.28}
+  .hero{background:linear-gradient(160deg,var(--roxo-3) 0%,var(--roxo) 55%,var(--roxo-2) 100%);color:var(--branco);padding:60px 6vw 68px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(1.65rem,3.5vw,2.5rem);line-height:1.28}
   .hero h1 em{color:var(--amarelo);font-style:normal}
-  .hero p{margin:18px 0 28px;color:#e9dff0;font-size:1.05rem;max-width:34rem}
+  .hero p{margin:18px 0 26px;color:#e9dff0;font-size:1.04rem;max-width:34rem}
   .cta-row{display:flex;gap:14px;flex-wrap:wrap}
   .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:12px;text-decoration:none;font-weight:700;font-size:1rem;transition:transform .15s ease}
   .btn:hover{transform:translateY(-2px)}
   .btn-wpp{background:var(--wpp);color:#06301c}
   .btn-ghost{background:transparent;color:var(--branco);border:1.5px solid rgba(255,255,255,.5)}
-  .selo{margin-top:22px;font-size:.85rem;color:#cdb8da}
+  .selo{margin-top:20px;font-size:.85rem;color:#cdb8da}
   .chat{background:var(--branco);border-radius:18px;box-shadow:0 18px 48px rgba(38,7,50,.45);overflow:hidden;max-width:380px;justify-self:end;width:100%}
   .chat-top{background:var(--wpp-2);color:#fff;padding:12px 16px;font-size:.92rem;display:flex;align-items:center;gap:10px}
   .chat-top .dot{width:9px;height:9px;border-radius:50%;background:#6bf58e;box-shadow:0 0 6px #6bf58e}
@@ -41,26 +39,40 @@
   .msg small{display:block;font-size:.7rem;color:var(--cinza);margin-top:4px;text-align:right}
   .pai{background:#fff;align-self:flex-start;border-top-left-radius:4px}
   .sec{background:#dcf8c6;align-self:flex-end;border-top-right-radius:4px}
-  section{padding:56px 6vw}
-  h2{color:var(--roxo);font-size:1.6rem;margin-bottom:8px}
-  .sub{color:var(--texto-suave);margin-bottom:32px;max-width:44rem}
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-  .card{background:var(--branco);border-radius:16px;padding:26px;box-shadow:0 4px 18px rgba(105,31,132,.08);border-top:4px solid var(--amarelo)}
-  .card h3{color:var(--roxo);font-size:1.08rem;margin-bottom:8px}
-  .card p{font-size:.93rem;color:var(--texto-suave)}
+  section{padding:52px 6vw}
+  h2{color:var(--roxo);font-size:1.55rem;margin-bottom:8px}
+  .sub{color:var(--texto-suave);margin-bottom:30px;max-width:46rem}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+  .card{background:var(--branco);border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(105,31,132,.08);display:flex;flex-direction:column}
+  .card img{width:100%;height:170px;object-fit:cover}
+  .card .pad{padding:20px 22px;border-top:4px solid var(--amarelo)}
+  .card h3{color:var(--roxo);font-size:1.05rem;margin-bottom:6px}
+  .card p{font-size:.92rem;color:var(--texto-suave)}
+  .historia{background:var(--branco);display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center}
+  .historia img{width:220px;height:220px;object-fit:cover;border-radius:16px;box-shadow:0 8px 24px rgba(105,31,132,.18)}
+  .historia blockquote{font-size:1.05rem;color:var(--roxo-3);border-left:4px solid var(--amarelo);padding-left:16px;margin-top:14px}
+  .historia cite{display:block;font-size:.85rem;color:var(--texto-suave);margin-top:6px;font-style:normal}
+  .depo{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .depo .d{background:var(--creme);border-radius:16px;padding:24px;border:1px solid #f0e2b6}
+  .depo p{font-size:.95rem;color:var(--texto)}
+  .depo b{display:block;margin-top:12px;color:var(--roxo);font-size:.85rem}
+  .galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+  .galeria img{width:100%;height:160px;object-fit:cover;border-radius:12px}
+  .parcerias-lista{display:flex;flex-wrap:wrap;gap:12px}
+  .parcerias-lista span{background:var(--branco);border:1.5px solid #e2d5ea;color:var(--roxo-3);padding:10px 18px;border-radius:999px;font-size:.88rem}
   .visita{background:var(--creme)}
   .form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;max-width:840px}
   .form input,.form select{padding:13px 14px;border:1.5px solid #e2d5ea;border-radius:10px;font-size:.95rem;background:var(--branco);font-family:inherit}
   .form input:focus,.form select:focus{outline:2px solid var(--roxo);border-color:var(--roxo)}
   .form .btn-enviar{background:var(--roxo);color:#fff;border:none;cursor:pointer;font-weight:700;grid-column:1/-1;justify-self:start;font-family:inherit}
   .form .btn-enviar:hover{background:var(--roxo-3)}
-  .matriculas{background:linear-gradient(135deg,var(--amarelo) 0%,#f5920a 100%);color:var(--roxo-3);border-radius:22px;margin:0 6vw;padding:42px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;box-shadow:0 10px 30px rgba(255,168,11,.35)}
+  .matriculas{background:linear-gradient(135deg,var(--amarelo) 0%,#f5920a 100%);color:var(--roxo-3);border-radius:22px;margin:0 6vw;padding:40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;box-shadow:0 10px 30px rgba(255,168,11,.35)}
   .matriculas h2{color:var(--roxo-3)}
   .matriculas .btn{background:var(--roxo);color:#fff}
-  footer{background:var(--roxo-3);color:#d9c8e3;padding:42px 6vw;margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;font-size:.9rem}
+  footer{background:var(--roxo-3);color:#d9c8e3;padding:40px 6vw;margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;font-size:.9rem}
   footer h4{color:var(--amarelo);margin-bottom:10px;font-size:.95rem}
   footer .mini{grid-column:1/-1;border-top:1px solid #7a4692;padding-top:16px;font-size:.78rem;color:#b39ac2}
-  @media(max-width:820px){.hero{grid-template-columns:1fr}.chat{justify-self:center}nav{display:none}}
+  @media(max-width:820px){.hero{grid-template-columns:1fr}.chat{justify-self:center}nav{display:none}.historia{grid-template-columns:1fr}.historia img{width:100%;height:200px}}
 </style>
 </head>
 <body>
@@ -70,6 +82,7 @@
   <div class="logo"><img src="logo_pietra.png" alt="Colégio Pietra"></div>
   <nav>
     <a href="#niveis">Níveis de Ensino</a>
+    <a href="#historia">Institucional</a>
     <a href="#visita">Agende uma Visita</a>
     <a href="#matriculas">Matrículas 2027</a>
     <a href="como-funciona.html"><strong>Como funciona →</strong></a>
@@ -90,31 +103,69 @@
     <div class="chat-top"><span class="dot"></span> Secretaria · Colégio Pietra <span style="margin-left:auto;font-size:.75rem;opacity:.85">online</span></div>
     <div class="chat-body">
       <div class="msg pai">Boa noite! Ainda tem vaga no Infantil pra 2027? Quanto fica a mensalidade?<small>22:04</small></div>
-      <div class="msg sec">Boa noite! 😊 Temos sim vagas abertas para o Infantil 2027. Os valores variam por turma e plano de pagamento — posso agendar uma visita para você conhecer a unidade e receber a tabela completa? Temos horários amanhã às 9h ou 15h.<small>22:04</small></div>
-      <div class="msg pai">Pode ser amanhã 9h na unidade 1!<small>22:05</small></div>
-      <div class="msg sec">Agendado! ✅ Visita amanhã, 9h, Unidade 1. Vou te mandar a localização e os documentos para trazer. Até amanhã!<small>22:05</small></div>
+      <div class="msg sec">Boa noite! 😊 Temos sim vagas abertas para o Infantil 2027 — nossa unidade exclusiva para os pequenos. Os valores variam por turma e plano de pagamento; posso agendar uma visita para você conhecer o espaço e receber a tabela completa? Temos horários amanhã às 9h ou 15h.<small>22:04</small></div>
+      <div class="msg pai">Pode ser amanhã 9h!<small>22:05</small></div>
+      <div class="msg sec">Agendado! ✅ Visita amanhã, 9h. Vou te enviar a localização e a lista de documentos. Até amanhã!<small>22:05</small></div>
     </div>
   </div>
 </section>
 
 <section id="niveis">
-  <h2>Do primeiro passo ao vestibular</h2>
-  <p class="sub">Três segmentos, uma mesma filosofia: equipe pedagógica experiente, infraestrutura moderna e projetos culturais, esportivos e tecnológicos.</p>
+  <h2>Excelência em Educação do Infantil ao Ensino Médio</h2>
+  <p class="sub">Proposta pedagógica inovadora, metodologias ativas e um ambiente acolhedor — do primeiro passo ao vestibular.</p>
   <div class="cards">
-    <div class="card"><h3>Educação Infantil</h3><p>Acolhimento, descoberta e desenvolvimento em um ambiente preparado para os primeiros anos.</p></div>
-    <div class="card"><h3>Ensino Fundamental</h3><p>Base acadêmica sólida com laboratórios, salas equipadas e acompanhamento próximo das famílias.</p></div>
-    <div class="card"><h3>Ensino Médio</h3><p>Preparação para o vestibular e para a vida, com projetos de tecnologia e orientação de carreira.</p></div>
+    <div class="card"><img src="fotos/foto-infantil.webp" alt="Educação Infantil"><div class="pad"><h3>Educação Infantil</h3><p>Desenvolvimento integral com carinho e criatividade, em uma unidade exclusiva para os pequenos, com os cinco campos de experiências.</p></div></div>
+    <div class="card"><img src="fotos/foto-fundamental2.webp" alt="Ensino Fundamental"><div class="pad"><h3>Ensino Fundamental I e II</h3><p>Formação sólida com foco em valores e conhecimento — amor, ética, respeito, responsabilidade e disciplina.</p></div></div>
+    <div class="card"><img src="fotos/foto-medio.webp" alt="Ensino Médio"><div class="pad"><h3>Ensino Médio</h3><p>Preparação para o futuro com excelência acadêmica e material didático em constante atualização.</p></div></div>
+  </div>
+</section>
+
+<section class="historia" id="historia">
+  <img src="fotos/1996-castelinho-da-alegria.jpg" alt="Castelinho da Alegria, 1996">
+  <div>
+    <h2>Desde 1996, um espaço para sonhar</h2>
+    <p class="sub" style="margin-bottom:10px">Em 15 de abril de 1996 nascia o Centro Educacional Castelinho da Alegria — o sonho que se tornou o Colégio Pietra: um lugar onde os alunos sonham, criam e realizam seus projetos de vida, ganhando no caminho a confiança em si mesmos.</p>
+    <blockquote>"Lapidando o educando em um cidadão criativo, crítico, reflexivo e transformador da sociedade."<cite>— Diretora Solange Gazineu Tagliapietra</cite></blockquote>
+  </div>
+</section>
+
+<section>
+  <h2>O que dizem pais e alunos</h2>
+  <div class="depo">
+    <div class="d"><p>"O Colégio Pietra transformou a vida do meu filho. Ele se sente acolhido e motivado todos os dias."</p><b>— Maria, mãe de aluno</b></div>
+    <div class="d"><p>"Aqui aprendi a pensar de forma crítica e a me preparar para o futuro com confiança."</p><b>— João, aluno do Ensino Médio</b></div>
+  </div>
+</section>
+
+<section>
+  <h2>Nossa estrutura</h2>
+  <p class="sub">Salas equipadas, laboratórios e espaços de convivência que estimulam o aprendizado.</p>
+  <div class="galeria">
+    <img src="fotos/unidade1-2.webp" alt="Estrutura do Colégio Pietra">
+    <img src="fotos/unidade1-3.webp" alt="Estrutura do Colégio Pietra">
+    <img src="fotos/unidade1-4.webp" alt="Estrutura do Colégio Pietra">
+    <img src="fotos/institucional.jpg" alt="Colégio Pietra">
+  </div>
+</section>
+
+<section>
+  <h2>Parcerias que ampliam horizontes</h2>
+  <div class="parcerias-lista">
+    <span>Consulado Italiano</span>
+    <span>Instituto Cultural Ítalo-Brasileiro</span>
+    <span>Academia CPN</span>
+    <span>Google Workspace · Sophia Education</span>
   </div>
 </section>
 
 <section class="visita" id="visita">
   <h2>Agende sua visita em 30 segundos</h2>
-  <p class="sub">Escolha a unidade e o melhor horário — a confirmação chega na hora, pelo WhatsApp.</p>
+  <p class="sub">Venha ver de perto como tecnologia, comunicação e ensino de qualidade se unem na formação do seu filho. A confirmação chega na hora, pelo WhatsApp.</p>
   <form class="form" onsubmit="return false">
     <input type="text" placeholder="Seu nome" />
     <input type="tel" placeholder="WhatsApp (11) 9...." />
     <select><option>Unidade 1</option><option>Unidade 2</option></select>
-    <select><option>Interesse: Infantil</option><option>Fundamental</option><option>Ensino Médio</option></select>
+    <select><option>Interesse: Educação Infantil</option><option>Ensino Fundamental I e II</option><option>Ensino Médio</option></select>
     <button class="btn btn-enviar">Quero agendar minha visita →</button>
   </form>
 </section>
@@ -133,7 +184,7 @@
   <div><h4>Unidade 1</h4>(11) 3539-7315 · (11) 2951-3820</div>
   <div><h4>Unidade 2</h4>(11) 2209-4112 · (11) 93369-6174</div>
   <div><h4>Secretaria Digital</h4>Atendimento no WhatsApp 24h<br>Assuntos delicados: sempre com uma pessoa da equipe.</div>
-  <div class="mini">Demonstração da <strong>Secretaria Digital</strong> — linha Funcionários Digitais (Facility SaaS), construída sobre a identidade visual oficial do Colégio Pietra. Nenhum dado real de aluno ou responsável. A conversa do topo é simulação.</div>
+  <div class="mini">Demonstração da <strong>Secretaria Digital</strong> — linha Funcionários Digitais (Facility SaaS), construída com a identidade visual, textos, fotos e depoimentos oficiais do site do Colégio Pietra. A conversa do topo é simulação.</div>
 </footer>
 </body>
 </html>
