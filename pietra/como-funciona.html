@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Como funciona a Secretaria Digital — Colégio Pietra (DEMO)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{--roxo:#691f84;--roxo-3:#561b6b;--amarelo:#ffa80b;--creme:#fefce8;--fundo:#f9f9f9;--branco:#fff;--texto:#333;--suave:#555;--wpp:#25d366}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'ABeeZee',system-ui,sans-serif;color:var(--texto);background:var(--fundo);line-height:1.6}
+  .demo-badge{position:fixed;top:12px;right:12px;background:var(--roxo);color:#ffef0b;font-size:11px;letter-spacing:.08em;padding:6px 12px;border-radius:999px;z-index:99;opacity:.93}
+  header{background:var(--branco);padding:14px 6vw;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 8px rgba(105,31,132,.10)}
+  header img{height:40px}
+  header a{color:var(--roxo);text-decoration:none;font-size:.95rem}
+  .topo{background:linear-gradient(160deg,var(--roxo-3),var(--roxo));color:#fff;padding:44px 6vw}
+  .topo h1{font-size:clamp(1.4rem,3vw,2rem)}
+  .topo p{color:#e9dff0;margin-top:10px;max-width:46rem}
+  section{padding:44px 6vw}
+  h2{color:var(--roxo);font-size:1.35rem;margin-bottom:16px}
+  .caso{background:var(--branco);border-radius:14px;padding:18px 20px;margin-bottom:12px;box-shadow:0 3px 14px rgba(105,31,132,.07);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+  .caso .tag{font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap;margin-top:2px}
+  .t-ia{background:#e8f7ee;color:#1a7a43}
+  .t-humano{background:#fdeaea;color:#b3261e}
+  .t-conv{background:var(--creme);color:#9a6b00;border:1px solid #f0d98a}
+  .caso b{color:var(--roxo)}
+  .caso small{display:block;color:var(--suave);margin-top:3px}
+  .relatorio{background:var(--branco);border-left:5px solid var(--amarelo);border-radius:12px;padding:24px 26px;box-shadow:0 4px 18px rgba(105,31,132,.08);max-width:640px;font-size:.93rem}
+  .relatorio p{margin-bottom:10px}
+  .relatorio .cab{color:var(--roxo);font-weight:700}
+  .cta{background:var(--creme);text-align:center;border-radius:18px;margin:0 6vw 44px;padding:34px}
+  .cta a{display:inline-block;background:var(--wpp);color:#06301c;font-weight:700;padding:14px 24px;border-radius:12px;text-decoration:none;margin-top:12px}
+  footer{background:var(--roxo-3);color:#d9c8e3;padding:26px 6vw;font-size:.78rem}
+</style>
+</head>
+<body>
+<div class="demo-badge">DEMO · Secretaria Digital</div>
+<header>
+  <img src="logo_pietra.png" alt="Colégio Pietra">
+  <a href="index.html">← voltar à página</a>
+</header>
+
+<div class="topo">
+  <h1>Como a Secretaria Digital atende — 10 situações reais</h1>
+  <p>A regra que guia tudo: <strong>rotina a IA resolve na hora; assunto delicado vai SEMPRE para uma pessoa da equipe</strong> — com registro e prioridade. Ninguém fica sem resposta.</p>
+</div>
+
+<section>
+  <h2>Os 10 casos</h2>
+  <div class="caso"><span class="tag t-ia">IA RESPONDE</span><div><b>"Que horas abre a secretaria amanhã?"</b><small>Resposta imediata com horários das duas unidades.</small></div></div>
+  <div class="caso"><span class="tag t-conv">IA CONVERTE</span><div><b>"Tem vaga no Infantil pra 2027? Qual o valor?"</b><small>Confirma a vaga e oferece visita com dois horários — a tabela completa é entregue na visita.</small></div></div>
+  <div class="caso"><span class="tag t-conv">IA CONVERTE</span><div><b>"Quero agendar uma visita sábado"</b><small>Agenda, confirma e envia localização; entra no funil de matrículas.</small></div></div>
+  <div class="caso"><span class="tag t-ia">IA RESPONDE</span><div><b>"Quais documentos preciso pra matrícula?"</b><small>Checklist completo + oferta de iniciar a pré-matrícula.</small></div></div>
+  <div class="caso"><span class="tag t-humano">PESSOA, JÁ</span><div><b>"Meu filho passou mal na aula?"</b><small>A IA não responde o mérito: acusa recebimento e aciona a coordenação da unidade imediatamente.</small></div></div>
+  <div class="caso"><span class="tag t-humano">PESSOA, JÁ</span><div><b>"Minha mensalidade veio errada, estou sendo cobrado 2x"</b><small>Acolhe e transfere para o financeiro — valores nunca se discutem com robô.</small></div></div>
+  <div class="caso"><span class="tag t-humano">PESSOA, JÁ</span><div><b>"Meu filho está sofrendo bullying na sala"</b><small>Acolhimento e escalada direta à coordenação pedagógica, prioridade máxima.</small></div></div>
+  <div class="caso"><span class="tag t-ia">IA RESPONDE</span><div><b>"Vocês têm período integral no Fundamental?"</b><small>Responde e oferece o material do segmento + visita.</small></div></div>
+  <div class="caso"><span class="tag t-ia">IA RESPONDE</span><div><b>"Parabéns pela festa junina!"</b><small>Agradece e registra o elogio no relatório da direção.</small></div></div>
+  <div class="caso"><span class="tag t-ia">IA RESPONDE</span><div><b>"Qual o endereço da unidade 2?"</b><small>Endereço + link do mapa na hora.</small></div></div>
+</section>
+
+<section>
+  <h2>O que a direção recebe todo dia às 18h</h2>
+  <div class="relatorio">
+    <p class="cab">📊 Colégio Pietra — resumo do dia (ter, 07/07)</p>
+    <p><strong>Atendimento:</strong> 47 mensagens · 41 respondidas em menos de 1 min · 6 encaminhadas à equipe · <strong>0 sem resposta</strong></p>
+    <p><strong>Matrículas 2027:</strong> 5 novos interessados · 3 visitas agendadas · 1 pré-matrícula iniciada</p>
+    <p><strong>Atenção da direção:</strong> 1 caso de convivência escalado às 14h12, respondido pela equipe às 14h20 ✅</p>
+    <p><strong>Amanhã:</strong> 3 visitas confirmadas · 2 follow-ups automáticos</p>
+    <p style="color:#888;font-size:.8rem">Secretaria Digital · supervisão humana em 100% dos casos sensíveis · trilha de auditoria completa</p>
+  </div>
+</section>
+
+<div class="cta">
+  <h2>Matrículas 2027 abrem em agosto.</h2>
+  <p>Cada pai que pergunta às 22h e não é respondido visita o concorrente no sábado.</p>
+  <a href="#" onclick="return false">Quero ver funcionando no meu número</a>
+</div>
+
+<footer>Demonstração da <strong>Secretaria Digital</strong> — linha Funcionários Digitais (Facility SaaS), sobre a identidade visual oficial do Colégio Pietra. Nenhum dado real de aluno ou responsável; casos e números desta página são simulação ilustrativa.</footer>
+</body>
+</html>
