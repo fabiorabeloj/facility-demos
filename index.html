@@ -1,1 +1,231 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>Facility — demonstrações</title></head><body style="font-family:sans-serif;padding:40px;color:#333"><h3>Facility SaaS — demonstrações</h3><p>Páginas de demonstração para clientes. Acesso pelos links enviados.</p></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funcionários Digitais — Seu WhatsApp nunca mais fica sem resposta</title>
+<meta name="description" content="Recepcionista digital 24h para negócios locais: responde clientes, agenda horários e anota pedidos no WhatsApp — com aprovação humana em tudo que é sensível. Demonstração grátis.">
+<style>
+  :root{
+    --ink:#1F2421; --muted:#5C665F; --paper:#F7F8F6; --card:#FFFFFF;
+    --green:#0E5A43; --green-deep:#0A4534; --gold:#B98A1E; --line:#E2E6E1;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--ink);
+    background:var(--paper);line-height:1.55}
+  h1,h2,h3{font-family:Bahnschrift,'Segoe UI Semibold','Segoe UI',sans-serif;line-height:1.15;
+    text-wrap:balance;margin:0 0 12px}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 22px}
+  a{color:var(--green)}
+
+  header{padding:18px 0;border-bottom:1px solid var(--line);background:var(--card)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .logo{font-family:Bahnschrift,'Segoe UI Semibold',sans-serif;font-size:19px;letter-spacing:.02em}
+  .logo b{color:var(--green)}
+  .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;
+    padding:12px 22px;border-radius:8px;font-weight:600;font-size:15px}
+  .btn:hover{background:var(--green-deep)}
+  .btn.big{font-size:17px;padding:15px 30px}
+  header .btn{padding:9px 16px;font-size:14px}
+
+  .hero{padding:64px 0 56px;background:var(--card)}
+  .hero h1{font-size:clamp(30px,5.2vw,46px);max-width:17ch}
+  .hero p.lead{font-size:19px;color:var(--muted);max-width:52ch;margin:0 0 26px}
+  .hero .sub{font-size:14px;color:var(--muted);margin-top:14px}
+  .hero .sub b{color:var(--ink)}
+
+  section{padding:52px 0}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+    font-weight:700;margin-bottom:8px}
+  h2{font-size:clamp(22px,3.4vw,30px)}
+
+  .dor{background:var(--green-deep);color:#EAF2EE}
+  .dor h2{color:#fff}
+  .dor p{max-width:60ch;font-size:17px;margin:0}
+
+  .passos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+  @media(max-width:760px){.passos{grid-template-columns:1fr}}
+  .passo{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px}
+  .passo .num{font-family:Bahnschrift,sans-serif;font-size:14px;color:var(--gold);
+    font-weight:700;letter-spacing:.1em;margin-bottom:8px}
+  .passo h3{font-size:18px}
+  .passo p{margin:0;color:var(--muted);font-size:15px}
+
+  .planos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+  @media(max-width:820px){.planos{grid-template-columns:1fr}}
+  .plano{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px 22px;
+    display:flex;flex-direction:column;gap:6px}
+  .plano.destaque{border:2px solid var(--green);position:relative}
+  .plano .tag{position:absolute;top:-11px;left:20px;background:var(--green);color:#fff;
+    font-size:11px;font-weight:700;letter-spacing:.08em;padding:3px 10px;border-radius:999px}
+  .plano h3{font-size:20px;margin-bottom:2px}
+  .plano .frase{color:var(--muted);font-size:14px;min-height:40px}
+  .plano .preco{font-family:Bahnschrift,sans-serif;font-size:32px;margin:10px 0 2px;
+    font-variant-numeric:tabular-nums}
+  .plano .preco small{font-size:14px;color:var(--muted);font-family:'Segoe UI',sans-serif}
+  .plano .setup{font-size:12px;color:var(--muted);margin-bottom:12px}
+  .plano ul{margin:0 0 18px;padding-left:18px;color:var(--ink);font-size:14.5px;
+    display:flex;flex-direction:column;gap:7px}
+  .plano .btn{margin-top:auto;text-align:center}
+
+  .honesto{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .honesto .itens{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:24px}
+  @media(max-width:760px){.honesto .itens{grid-template-columns:1fr}}
+  .honesto h3{font-size:17px;color:var(--green)}
+  .honesto p{margin:0;color:var(--muted);font-size:15px}
+
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:8px;
+    padding:14px 18px;margin-top:10px}
+  .faq summary{font-weight:600;cursor:pointer}
+  .faq p{color:var(--muted);margin:10px 0 0;font-size:15px}
+
+  .cta-final{text-align:center;padding:64px 0}
+  .cta-final h2{max-width:24ch;margin:0 auto 10px}
+  .cta-final p{color:var(--muted);margin:0 0 24px}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:13px;color:var(--muted)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo"><b>Funcionários</b> Digitais</div>
+    <a class="btn" href="https://wa.me/5511982123896?text=Quero%20ver%20a%20demonstra%C3%A7%C3%A3o%20da%20recepcionista%20digital" rel="noopener">Ver demonstração grátis</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Seu WhatsApp nunca mais fica sem resposta.</h1>
+    <p class="lead">Uma recepcionista digital que responde seus clientes na hora, 24 horas —
+    cardápio, horários, agendamento, pedidos — enquanto você toca o negócio.</p>
+    <a class="btn big" href="https://wa.me/5511982123896?text=Quero%20ver%20a%20demonstra%C3%A7%C3%A3o%20da%20recepcionista%20digital" rel="noopener">Quero a demonstração de 1 minuto</a>
+    <p class="sub">Grátis, no seu WhatsApp, respondendo <b>como se fosse o seu negócio</b>. Sem cadastro, sem compromisso.</p>
+  </div>
+</section>
+
+<section class="dor">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#D9B75B">O problema</div>
+    <h2>Cliente que espera 10 minutos compra do concorrente.</h2>
+    <p>Seu WhatsApp lota na hora do movimento — exatamente quando você não pode responder.
+    Contratar alguém só para isso custa salário, encargos e treinamento. A recepcionista digital
+    custa menos que um dia de faturamento e nunca tira folga.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Como funciona</div>
+    <h2>Do primeiro contato ao ar em 3 passos</h2>
+    <div class="passos">
+      <div class="passo"><div class="num">PASSO 1</div><h3>Demonstração grátis</h3>
+        <p>Você vê a recepcionista respondendo como se fosse o SEU negócio — antes de pagar qualquer coisa.</p></div>
+      <div class="passo"><div class="num">PASSO 2</div><h3>1ª semana grátis de verdade</h3>
+        <p>Ela roda no seu movimento real. Não gostou? Desliga, sem custo e sem letra miúda.</p></div>
+      <div class="passo"><div class="num">PASSO 3</div><h3>No ar em 1 dia útil</h3>
+        <p>Você aprova o material (serviços, preços, horários) e ela começa a trabalhar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Planos</div>
+    <h2>Uma equipe que cabe no seu caixa</h2>
+    <div class="planos">
+      <div class="plano destaque">
+        <span class="tag">COMECE AQUI</span>
+        <h3>Recepcionista</h3>
+        <div class="frase">Seu WhatsApp respondido 24h, todos os dias.</div>
+        <div class="preco">R$ 297<small>/mês</small></div>
+        <div class="setup">ativação R$ 297 · 1ª semana grátis</div>
+        <ul>
+          <li>Responde clientes na hora, 24h</li>
+          <li>Agenda horários e anota pedidos</li>
+          <li>Relatório diário no seu WhatsApp</li>
+          <li>Casos delicados vêm para você</li>
+        </ul>
+        <a class="btn" href="https://wa.me/5511982123896?text=Quero%20a%20demonstra%C3%A7%C3%A3o%20do%20plano%20Recepcionista" rel="noopener">Ver demonstração</a>
+      </div>
+      <div class="plano">
+        <h3>Equipe</h3>
+        <div class="frase">Recepção, vendas e caixa organizados.</div>
+        <div class="preco">R$ 597<small>/mês</small></div>
+        <div class="setup">ativação R$ 797 · inclui site vitrine</div>
+        <ul>
+          <li>Tudo do Recepcionista</li>
+          <li>Vendedor: separa curioso de comprador e faz follow-up</li>
+          <li>Financeiro: caixa e lembretes de cobrança</li>
+          <li>Site vitrine do seu negócio incluso</li>
+        </ul>
+        <a class="btn" href="https://wa.me/5511982123896?text=Quero%20saber%20do%20plano%20Equipe" rel="noopener">Falar sobre o Equipe</a>
+      </div>
+      <div class="plano">
+        <h3>Empresa Completa</h3>
+        <div class="frase">Uma equipe inteira, sem folha de pagamento.</div>
+        <div class="preco">R$ 1.197<small>/mês</small></div>
+        <div class="setup">ativação R$ 1.497</div>
+        <ul>
+          <li>Tudo do Equipe</li>
+          <li>Marketing: posts e criativos do negócio</li>
+          <li>Gerente: relatório executivo diário</li>
+          <li>Painel com faturamento, agenda e funil</li>
+        </ul>
+        <a class="btn" href="https://wa.me/5511982123896?text=Quero%20saber%20do%20plano%20Empresa%20Completa" rel="noopener">Falar sobre o Completo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="honesto">
+  <div class="wrap">
+    <div class="eyebrow">Por que é diferente</div>
+    <h2>Sem promessa mágica. Com controle seu.</h2>
+    <div class="itens">
+      <div><h3>Nada sensível sai sem gente</h3><p>Cobrança, reclamação, caso delicado — passa por
+      você ou escala para você. Sempre.</p></div>
+      <div><h3>Ela não inventa</h3><p>O que não está no seu material, ela não responde — encaminha.
+      Preferimos "vou confirmar com o dono" a uma resposta errada.</p></div>
+      <div><h3>Números, não promessas</h3><p>Todo dia você recebe: quantos atendidos, quantos
+      agendados, o que ficou pendente.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="eyebrow">Dúvidas diretas</div>
+    <h2>Perguntas que todo dono faz</h2>
+    <details><summary>Preciso trocar meu número de WhatsApp?</summary>
+      <p>Não. A recepcionista trabalha em um número comercial dedicado ao seu negócio — o seu
+      número pessoal continua seu.</p></details>
+    <details><summary>E se ela não souber responder?</summary>
+      <p>Ela avisa o cliente que vai confirmar e encaminha para você. Nunca inventa preço,
+      prazo ou promessa.</p></details>
+    <details><summary>Quanto tempo até estar funcionando?</summary>
+      <p>1 dia útil depois de você aprovar o material (serviços, preços, horários).</p></details>
+    <details><summary>E se eu quiser cancelar?</summary>
+      <p>Cancela quando quiser, sem multa. Seus dados e os dos seus clientes são apagados.</p></details>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <h2>Veja com os seus olhos, no seu WhatsApp.</h2>
+    <p>Demonstração de 1 minuto, com a recepcionista respondendo como se fosse o seu negócio.</p>
+    <a class="btn big" href="https://wa.me/5511982123896?text=Quero%20ver%20a%20demonstra%C3%A7%C3%A3o%20da%20recepcionista%20digital" rel="noopener">Chamar no WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span><b>Funcionários Digitais</b> · uma linha Facility SaaS · São Paulo</span>
+    <span>Atendimento com aprovação humana em tudo que é sensível.</span>
+  </div>
+</footer>
+
+</body>
+</html>
