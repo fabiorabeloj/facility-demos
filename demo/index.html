@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demonstração — Facility SaaS</title>
+<meta name="description" content="Teste a recepcionista digital agora, no navegador: escolha um tipo de negócio e converse como se fosse seu cliente.">
+<style>
+  :root{--ink:#1F2421;--muted:#5C665F;--paper:#F7F8F6;--card:#fff;--green:#0E5A43;
+    --green-deep:#0A4534;--gold:#B98A1E;--line:#E2E6E1;--wa:#E7F3EC}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Segoe UI',system-ui,sans-serif;color:var(--ink);
+    background:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+  header{padding:14px 0;border-bottom:1px solid var(--line);background:var(--card)}
+  .wrap{max-width:720px;margin:0 auto;padding:0 18px;width:100%}
+  header .wrap{display:flex;justify-content:space-between;align-items:center}
+  .logo{font-family:Bahnschrift,'Segoe UI Semibold',sans-serif;font-size:18px}
+  .logo b{color:var(--green)}
+  header a{color:var(--green);font-size:13.5px;text-decoration:none;font-weight:600}
+
+  .topo{padding:22px 0 8px}
+  h1{font-family:Bahnschrift,'Segoe UI Semibold',sans-serif;font-size:24px;margin:0 0 4px;text-wrap:balance}
+  .topo p{color:var(--muted);margin:0 0 14px;font-size:14.5px}
+  .nichos{display:flex;gap:8px;flex-wrap:wrap}
+  .nichos button{border:1px solid var(--line);background:var(--card);border-radius:999px;
+    padding:8px 16px;font-size:14px;cursor:pointer;font-family:inherit}
+  .nichos button.on{background:var(--green);border-color:var(--green);color:#fff;font-weight:600}
+
+  .chat{flex:1;display:flex;flex-direction:column;max-width:720px;margin:14px auto 0;
+    width:calc(100% - 36px);background:var(--card);border:1px solid var(--line);
+    border-radius:14px 14px 0 0;overflow:hidden}
+  .aviso{background:#FDF6E3;color:#7A6215;font-size:12px;padding:7px 14px;text-align:center}
+  .msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;
+    min-height:300px;max-height:52vh;background:linear-gradient(#FBFBFA,#F4F6F4)}
+  .m{max-width:78%;padding:9px 13px;border-radius:12px;font-size:14.5px;line-height:1.45;
+    white-space:pre-line;animation:pop .18s ease-out}
+  @keyframes pop{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+  .m.bot{background:var(--card);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+  .m.eu{background:var(--wa);border-bottom-right-radius:4px;align-self:flex-end}
+  .m.sys{align-self:center;background:none;color:var(--muted);font-size:12px;max-width:100%}
+  .digitando{align-self:flex-start;color:var(--muted);font-size:13px;padding:4px 13px}
+
+  .sugestoes{display:flex;gap:8px;padding:10px 14px;flex-wrap:wrap;border-top:1px solid var(--line);background:var(--card)}
+  .sugestoes button{border:1px solid var(--green);color:var(--green);background:#fff;
+    border-radius:999px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:inherit}
+  .sugestoes button:hover{background:var(--wa)}
+  .entrada{display:flex;gap:8px;padding:12px 14px;background:var(--card);border-top:1px solid var(--line)}
+  .entrada input{flex:1;border:1px solid var(--line);border-radius:999px;padding:11px 16px;
+    font-size:15px;font-family:inherit;outline-color:var(--green)}
+  .entrada button{background:var(--green);color:#fff;border:0;border-radius:999px;
+    padding:0 22px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit}
+
+  .cta{background:var(--green-deep);color:#EAF2EE;text-align:center;padding:26px 18px 34px}
+  .cta b{display:block;font-family:Bahnschrift,sans-serif;font-size:19px;margin-bottom:4px}
+  .cta p{margin:0 0 16px;font-size:14px;opacity:.9}
+  .cta a{display:inline-block;background:#fff;color:var(--green-deep);text-decoration:none;
+    padding:13px 26px;border-radius:8px;font-weight:700;font-size:15px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="logo"><b>Facility</b> SaaS</div>
+  <a href="../">← voltar ao site</a>
+</div></header>
+
+<div class="wrap topo">
+  <h1>Converse com ela. Agora.</h1>
+  <p>Escolha um tipo de negócio e pergunte como se você fosse o cliente.</p>
+  <div class="nichos" id="nichos"></div>
+</div>
+
+<div class="chat">
+  <div class="aviso">Demonstração com dados de exemplo — na sua versão, ela responde com os dados do SEU negócio.</div>
+  <div class="msgs" id="msgs"></div>
+  <div class="sugestoes" id="sug"></div>
+  <div class="entrada">
+    <input id="inp" placeholder="Escreva como se fosse seu cliente…" autocomplete="off">
+    <button id="env">Enviar</button>
+  </div>
+</div>
+
+<div class="cta">
+  <b>Gostou? Ela pode responder assim pelo SEU negócio.</b>
+  <p>1ª semana grátis no seu movimento real. No ar em 1 dia útil.</p>
+  <a href="https://wa.me/5511982123896?text=Testei%20a%20demonstra%C3%A7%C3%A3o%20e%20quero%20no%20meu%20neg%C3%B3cio" rel="noopener">Quero no meu negócio</a>
+</div>
+
+<script>
+const NICHOS = {
+  pizzaria: {
+    rotulo:"🍕 Pizzaria", nome:"Pizzaria da Vila",
+    boasvindas:"Oi! 👋 Você fala com a Pizzaria da Vila. Pode perguntar o cardápio, a área de entrega ou já fazer seu pedido.",
+    sugestoes:["Qual o cardápio?","Vocês entregam no Tatuapé?","Quero 2 mussarelas","Tem borda recheada?","Falar com o dono"],
+    regras:[
+      [/card[aá]pio|sabor|op[çc][õo]es|menu/i,"Hoje temos: mussarela R$45 · calabresa R$47 · portuguesa R$52 · marguerita R$49 (todas grandes, 8 fatias). Quer que eu já anote uma? 🍕"],
+      [/entrega|entregam|taxa|demora|tempo|bairro|tatuap[eé]|carr[ãa]o/i,"Entregamos sim! Taxa R$ 6 até 4 km, uns 40 minutos agora. Me passa o endereço que eu confirmo certinho. 🛵"],
+      [/quero|pedido|pedir|manda|mussarela|calabresa|portuguesa/i,"Anotado! 🍕 Já passei pra cozinha confirmar. Vai ser entrega ou retirada? E o pagamento: Pix, cartão ou dinheiro?"],
+      [/borda/i,"Tem sim! Borda de catupiry ou cheddar, +R$ 8. Quer incluir?"],
+      [/hor[aá]rio|aberto|funciona|fecha/i,"A gente abre de terça a domingo, das 18h às 23h30. Agora estamos abertos! 😊"],
+      [/pre[çc]o|quanto|valor/i,"As grandes vão de R$45 a R$52. Me diz o sabor que eu te passo o valor exato!"],
+    ]
+  },
+  salao: {
+    rotulo:"💇 Salão", nome:"Espaço Bela",
+    boasvindas:"Oi! 👋 Você fala com o Espaço Bela. Quer marcar um horário, saber preço ou tirar uma dúvida?",
+    sugestoes:["Quanto custa a escova?","Tem horário sábado de manhã?","Quero marcar corte","Vocês atendem criança?","Falar com uma pessoa"],
+    regras:[
+      [/pre[çc]o|quanto|valor|custa/i,"Escova R$60 · corte feminino R$80 · corte masculino R$45 · coloração a partir de R$150. Quer marcar algum? 💇‍♀️"],
+      [/s[aá]bado|domingo|amanh[ãa]|hor[aá]rio|hoje|manh[ãa]|tarde|marcar|agendar|quero/i,"Deixa eu ver a agenda… tenho sábado 9h30, 11h e 14h. Qual fica melhor? Me passa seu nome que eu já reservo. 📅"],
+      [/crian[çc]a|infantil|filho|filha/i,"Atendemos sim! Corte infantil R$35, de terça a sábado. As crianças adoram a Márcia. 😊"],
+      [/cancela|desmarcar|remarcar/i,"Sem problema! Me diz seu nome e o horário que estava marcado, que eu já ajusto pra você."],
+      [/endere[çc]o|onde|fica/i,"A gente fica na Rua das Flores, 120 — pertinho do metrô. Tem estacionamento na porta!"],
+    ]
+  },
+  clinica: {
+    rotulo:"🦷 Clínica", nome:"Clínica Sorriso",
+    boasvindas:"Oi! 👋 Você fala com a Clínica Sorriso. Posso ver um horário de avaliação, valores ou dúvidas sobre tratamento.",
+    sugestoes:["Quanto custa a avaliação?","Tem horário essa semana?","Vocês atendem convênio?","Estou com dor de dente","Falar com a recepção"],
+    regras:[
+      [/dor|urg[êe]ncia|emerg[êe]ncia|quebrou|sangr/i,"Sinto muito! 😟 Caso de dor a gente encaixa hoje: tenho 16h40 ou 18h. Posso reservar? Se preferir, já chamo a recepção pra te ligar agora."],
+      [/avalia[çc][ãa]o|consulta|pre[çc]o|quanto|valor/i,"A avaliação sai R$ 90 — e se você fechar o tratamento, ela é abatida. Quer que eu veja um horário essa semana?"],
+      [/hor[aá]rio|semana|amanh[ãa]|marcar|agendar|quero|dispon/i,"Tenho quinta 10h, quinta 15h30 e sexta 9h. Qual prefere? Me passa nome e telefone que eu confirmo. 📅"],
+      [/conv[êe]nio|plano|unimed|amil|bradesco/i,"Essa eu confirmo com a recepção pra não te passar informação errada — já encaminhei, te respondem ainda hoje. 👍"],
+      [/clareamento|aparelho|implante|canal|limpeza/i,"Fazemos sim! O valor certinho depende da avaliação (R$ 90, abatida se fechar). Marco uma pra você?"],
+    ]
+  }
+};
+const FALLBACK_HUMANO = /humano|pessoa|dono|dona|atendente|gerente|recep[çc][ãa]o|reclama/i;
+const FALLBACK = "Boa pergunta — essa eu confirmo com o responsável pra não te passar informação errada. Já encaminhei e te respondem ainda hoje. 👍 Enquanto isso, posso ajudar com horários, preços ou pedidos!";
+const HUMANO = "Claro! Já chamei — te respondem por aqui em alguns minutos. 🙋 (Na vida real: a mensagem cai na hora no WhatsApp do dono, com todo o histórico.)";
+
+let nicho = 'pizzaria';
+const msgs = document.getElementById('msgs'), sug = document.getElementById('sug'),
+      inp = document.getElementById('inp'), nichosEl = document.getElementById('nichos');
+
+function el(cls, txt){ const d=document.createElement('div'); d.className='m '+cls; d.textContent=txt;
+  msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight; return d; }
+
+function bot(txt){
+  const dig=document.createElement('div'); dig.className='digitando'; dig.textContent='digitando…';
+  msgs.appendChild(dig); msgs.scrollTop=msgs.scrollHeight;
+  setTimeout(()=>{ dig.remove(); el('bot',txt); }, 500+Math.random()*500);
+}
+
+function responder(texto){
+  el('eu',texto);
+  const n=NICHOS[nicho];
+  if(FALLBACK_HUMANO.test(texto)) return bot(HUMANO);
+  for(const [rx,resp] of n.regras) if(rx.test(texto)) return bot(resp);
+  bot(FALLBACK);
+}
+
+function montarSugestoes(){ sug.innerHTML='';
+  NICHOS[nicho].sugestoes.forEach(s=>{ const b=document.createElement('button');
+    b.textContent=s; b.onclick=()=>responder(s); sug.appendChild(b); }); }
+
+function trocar(n){ nicho=n;
+  [...nichosEl.children].forEach(b=>b.classList.toggle('on', b.dataset.n===n));
+  msgs.innerHTML=''; el('sys','— nova conversa: '+NICHOS[n].nome+' —');
+  bot(NICHOS[n].boasvindas); montarSugestoes(); }
+
+Object.entries(NICHOS).forEach(([k,v])=>{ const b=document.createElement('button');
+  b.textContent=v.rotulo; b.dataset.n=k; b.onclick=()=>trocar(k); nichosEl.appendChild(b); });
+
+document.getElementById('env').onclick=()=>{ if(inp.value.trim()){ responder(inp.value.trim()); inp.value=''; } };
+inp.addEventListener('keydown',e=>{ if(e.key==='Enter'&&inp.value.trim()){ responder(inp.value.trim()); inp.value=''; } });
+
+trocar('pizzaria');
+</script>
+</body>
+</html>
